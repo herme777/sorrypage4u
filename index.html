@@ -74,6 +74,84 @@ Sorry 32
 Sorry 33
 Sorry 34
 Sorry 35
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Typing Effect</title>
+    <style>
+        body {
+            height: 300vh; /* Makes the page long for scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: monospace;
+        }
+
+        .box {
+            width: 90%; /* Adjusts to device width */
+            max-width: 600px;
+            min-height: 200px;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            white-space: pre-line;
+            overflow: hidden;
+        }
+
+        .typing {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="typing" id="typing"></div>
+    </div>
+
+    <script>
+        const text = `Sorry Nandhini this won't happen again
+Sorry 1
+Sorry 2
+Sorry 3
+Sorry 4
+Sorry 5
+Sorry 6
+Sorry 7
+Sorry 8
+Sorry 9
+Sorry 10
+Sorry 11
+Sorry 12
+Sorry 13
+Sorry 14
+Sorry 15
+Sorry 16
+Sorry 17
+Sorry 18
+Sorry 19
+Sorry 20
+Sorry 21
+Sorry 22
+Sorry 23
+Sorry 24
+Sorry 25
+Sorry 26
+Sorry 27
+Sorry 28
+Sorry 29
+Sorry 30
+Sorry 31
+Sorry 32
+Sorry 33
+Sorry 34
+Sorry 35
 Sorry 36
 Sorry 37
 Sorry 38
@@ -141,7 +219,7 @@ Sorry 99
 Sorry 100`;
 
         let index = 0;
-        const totalChars = text.length;
+        const totalLines = text.split("\n");
         const typingDiv = document.getElementById("typing");
 
         function updateText() {
@@ -149,11 +227,11 @@ Sorry 100`;
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             const progress = scrollPosition / maxScroll;
 
-            // Calculate how much of the text should be visible
-            const visibleChars = Math.floor(progress * totalChars);
+            // Show only a portion of the total text
+            const visibleLines = Math.floor(progress * totalLines.length);
+            const limitedLines = totalLines.slice(0, visibleLines).join("\n");
 
-            // Update the text dynamically
-            typingDiv.innerHTML = text.substring(0, visibleChars).replace(/\n/g, "<br>");
+            typingDiv.innerHTML = limitedLines.replace(/\n/g, "<br>");
         }
 
         window.addEventListener("scroll", updateText);
@@ -161,3 +239,55 @@ Sorry 100`;
 
 </body>
 </html>
+Sorry 36
+Sorry 37
+Sorry 38
+Sorry 39
+Sorry 40
+Sorry 41
+Sorry 42
+Sorry 43
+Sorry 44
+Sorry 45
+Sorry 46
+Sorry 47
+Sorry 48
+Sorry 49
+Sorry 50
+Sorry 51
+Sorry 52
+Sorry 53
+Sorry 54
+Sorry 55
+Sorry 56
+Sorry 57
+Sorry 58
+Sorry 59
+Sorry 60
+Sorry 61
+Sorry 62
+Sorry 63
+Sorry 64
+Sorry 65
+Sorry 66
+Sorry 67
+Sorry 68
+Sorry 69
+Sorry 70
+Sorry 71
+Sorry 72
+Sorry 73
+Sorry 74
+Sorry 75
+Sorry 76
+Sorry 77
+Sorry 78
+Sorry 79
+Sorry 80
+Sorry 81
+Sorry 82
+Sorry 83
+Sorry 84
+Sorry 85
+Sorry 86
+Sorry 87
