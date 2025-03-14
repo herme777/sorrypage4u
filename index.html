@@ -1,92 +1,163 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Typing Effect</title>
+    <style>
+        body {
+            height: 300vh; /* Makes the page long for scrolling */
+            padding-top: 50px;
+        }
 
-  <meta charset="UTF-8">
+        .box {
+            width: 60%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            font-family: monospace;
+            font-size: 20px;
+            white-space: pre-line;
+            overflow: hidden;
+            min-height: 200px;
+        }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Sorry Letter</title>
-
-  <style>
-
-    body {
-
-      font-family: Arial, sans-serif;
-
-      background-color: #f0f0f0;
-
-      color: #333;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
-
-    .container {
-
-      max-width: 600px;
-
-      margin: 50px auto;
-
-      padding: 20px;
-
-      background-color: #fff;
-
-      border-radius: 8px;
-
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-      border: 2px solid #ccc; /* Added border */
-
-    }
-
-    h1 {
-
-      color: #ff6347; /* Tomato */
-
-    }
-
-    p {
-
-      margin-bottom: 15px;
-
-    }
-
-    .emoji {
-
-      font-size: 24px;
-
-      margin-right: 5px;
-
-    }
-
-  </style>
-
+        .typing {
+            display: inline-block;
+        }
+    </style>
 </head>
-
 <body>
 
+    <div class="box">
+        <div class="typing" id="typing"></div>
+    </div>
 
+    <script>
+        const text = `Sorry Nandhini this won't happen again
+Sorry 1
+Sorry 2
+Sorry 3
+Sorry 4
+Sorry 5
+Sorry 6
+Sorry 7
+Sorry 8
+Sorry 9
+Sorry 10
+Sorry 11
+Sorry 12
+Sorry 13
+Sorry 14
+Sorry 15
+Sorry 16
+Sorry 17
+Sorry 18
+Sorry 19
+Sorry 20
+Sorry 21
+Sorry 22
+Sorry 23
+Sorry 24
+Sorry 25
+Sorry 26
+Sorry 27
+Sorry 28
+Sorry 29
+Sorry 30
+Sorry 31
+Sorry 32
+Sorry 33
+Sorry 34
+Sorry 35
+Sorry 36
+Sorry 37
+Sorry 38
+Sorry 39
+Sorry 40
+Sorry 41
+Sorry 42
+Sorry 43
+Sorry 44
+Sorry 45
+Sorry 46
+Sorry 47
+Sorry 48
+Sorry 49
+Sorry 50
+Sorry 51
+Sorry 52
+Sorry 53
+Sorry 54
+Sorry 55
+Sorry 56
+Sorry 57
+Sorry 58
+Sorry 59
+Sorry 60
+Sorry 61
+Sorry 62
+Sorry 63
+Sorry 64
+Sorry 65
+Sorry 66
+Sorry 67
+Sorry 68
+Sorry 69
+Sorry 70
+Sorry 71
+Sorry 72
+Sorry 73
+Sorry 74
+Sorry 75
+Sorry 76
+Sorry 77
+Sorry 78
+Sorry 79
+Sorry 80
+Sorry 81
+Sorry 82
+Sorry 83
+Sorry 84
+Sorry 85
+Sorry 86
+Sorry 87
+Sorry 88
+Sorry 89
+Sorry 90
+Sorry 91
+Sorry 92
+Sorry 93
+Sorry 94
+Sorry 95
+Sorry 96
+Sorry 97
+Sorry 98
+Sorry 99
+Sorry 100`;
 
-<div class="container">
+        let index = 0;
+        const totalChars = text.length;
+        const typingDiv = document.getElementById("typing");
 
-  <h1>Sorry :> </h1>
+        function updateText() {
+            const scrollPosition = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = scrollPosition / maxScroll;
 
-  <p>Nandhini Rajarajan </p>
-  <p> d/o Rani</p>
-  <p> 100 times sorry<p>
+            // Calculate how much of the text should be visible
+            const visibleChars = Math.floor(progress * totalChars);
 
-  <p><span class="emoji">&#x1F64F;</span><span> </span
-><em></em></p>
+            // Update the text dynamically
+            typingDiv.innerHTML = text.substring(0, visibleChars).replace(/\n/g, "<br>");
+        }
 
-</div>
-
-
+        window.addEventListener("scroll", updateText);
+    </script>
 
 </body>
-
 </html>
